@@ -21,7 +21,7 @@ router.delete("/me", authMiddleware.checkAccessToken, userController.deleteMe);
 router.post(
   "/me/avatar",
   authMiddleware.checkAccessToken,
-  fileMiddleware.isFileValid(),
+  fileMiddleware.validateFiles(),
   userController.uploadAvatar,
 );
 router.delete(
